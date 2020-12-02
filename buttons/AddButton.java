@@ -16,6 +16,7 @@ public class AddButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Clothes clothes = new Factory().createClothes(owner);
+        if(clothes.getArticle().equals("")) return;
         if(!clothesTableModel.addData(clothes)){
             JOptionPane.showMessageDialog(owner,
                     "Объект на записан. Вещь с таким артиклем уже существует",
